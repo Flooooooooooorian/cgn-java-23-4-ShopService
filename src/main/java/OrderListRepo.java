@@ -10,7 +10,7 @@ public class OrderListRepo implements OrderRepo{
 
     public Order getOrderById(String id) {
         for (Order order : orders) {
-            if (order.id().equals(id)) {
+            if (order.getId().equals(id)) {
                 return order;
             }
         }
@@ -24,7 +24,7 @@ public class OrderListRepo implements OrderRepo{
 
     public void removeOrder(String id) {
         for (Order order : orders) {
-            if (order.id().equals(id)) {
+            if (order.getId().equals(id)) {
                 orders.remove(order);
                 return;
             }

@@ -17,8 +17,8 @@ class ShopServiceTest {
 
         //THEN
         Order expected = new Order("-1", List.of(new Product("1", "Apfel")), OrderStatus.IN_PROCESS);
-        assertEquals(expected.products(), actual.products());
-        assertNotNull(expected.id());
+        assertEquals(expected.getProducts(), actual.getProducts());
+        assertNotNull(expected.getId());
     }
 
     @Test

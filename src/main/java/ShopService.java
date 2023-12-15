@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class ShopService {
     private ProductRepo productRepo = new ProductRepo();
-    private OrderRepo orderRepo = new OrderMapRepo();
+    private OrderRepo orderRepo = new OrderListRepo();
 
     public Order addOrder(List<String> productIds) {
         List<Product> products = new ArrayList<>();
@@ -21,7 +21,10 @@ public class ShopService {
             products.add(productToOrder.get());
         }
 
-        Order newOrder = new Order(UUID.randomUUID().toString(), products, OrderStatus.IN_PROCESS);
+        Order newOrder = new Order();
+        newOrder.setId(UUID.randomUUID().toString());
+        newOrder.setProducts(products);
+        newOrder.setStatus(OrderStatus.IN_PROCESS);
 
         return orderRepo.addOrder(newOrder);
     }

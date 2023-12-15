@@ -1,8 +1,21 @@
-import java.util.List;
+import lombok.*;
 
-public record Order(
-        String id,
-        List<Product> products,
-        OrderStatus status  // in bearbeitung, versendet, abgeschlossen
-) {
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Objects;
+
+//@ToString
+//@EqualsAndHashCode
+//@Getter
+//@Setter
+//@RequiredArgsConstructor
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Order {
+    private String id;
+    private List<Product> products;
+    private OrderStatus status;
 }
